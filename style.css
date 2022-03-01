@@ -1,0 +1,210 @@
+body{
+	
+	font-family: London, sans-serif;
+}
+
+
+@font-face {
+	font-family: "London";
+	src: url('assets/london/LondonFill.ttf');
+}
+
+
+h1{
+	font-size: 96px;
+}
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+html, body{
+  height: 100%;
+  font-weight: 800;
+
+}
+
+body{
+  background: #030321;
+  font-family: Arial;	
+  font-family: London, sans-serif;
+  overflow: hidden;
+}
+
+
+@font-face {
+	font-family: "London";
+	src: url('assets/london/LondonFill.ttf');
+}
+
+
+
+svg {
+    display: block;
+    font: 10.5em 'Montserrat';
+    width: 960px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 5px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+	stroke: #4D163D;
+	animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+	stroke: #840037;
+	animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+	stroke: #BD0034;
+	animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+	stroke: #BD0034;
+	animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+	stroke: #FDB731;
+	animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+	100% {stroke-dashoffset: -35%;}
+}
+
+img{
+	width: 200px;
+	height: 200px;
+}
+div{
+	font-family: Montserrat;
+	font-size: 55px;
+	color: white;
+	text-align: center;
+}
+p{
+	font-family: Montserrat;
+	color: lightblue;
+}
+
+footer{
+text-align: center;
+background:#030336;
+
+position:absolute;
+
+bottom:0;
+
+width:100%;
+
+padding-top:50px;
+
+height:50px;
+
+}
+.parent {
+  line-height: 4em; 
+  white-space: nowrap;
+}
+
+.enfant-2{
+	font-size: 15px;
+}
+
+//Lato font
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+//color/ui color variables
+$white: #ececec;
+$black: #333333;
+$yellow: #ffff00;
+$purple: #8a19ff;
+$colorPrimary: $yellow;
+$colorSecondary: $purple;
+
+//split button mixin
+@mixin btn__split($colorLeft, $colorRight, $textColor) {
+	.btn {
+		position: relative;
+		letter-spacing: 0.25em;
+		margin: 0 auto;
+		padding: 1rem 2.5rem;
+		background: transparent;
+		outline: none;
+		font-size: 28px;
+		color: $textColor;
+
+		&::after,
+		&::before {
+			content: "";
+			position: absolute;
+			height: 100%;
+			width: 50%;
+			transform: skewX(30deg);
+			transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+			z-index: -2;
+		}
+		&::before {
+			background-color: $colorLeft;
+			top: -1rem;
+			left: 0rem;
+		}
+		&::after {
+			background-color: $colorRight;
+			top: 1rem;
+			left: 8rem;
+		}
+		&:hover {
+			&::before,
+			&::after {
+				top: 0;
+				transform: skewx(0deg);
+			}
+			&::after {
+				left: 0rem;
+			}
+			&::before {
+				left: 8.75rem;
+			}
+		}
+	}
+}
+
+body,html{
+	height: 100%;
+}
+
+body {
+	font-family: "Lato", sans-serif;
+	color: $black;
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+}
+
+.container {
+	width: auto;
+	margin: auto;
+}
+a {
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: 700;
+}
+
+@include btn__split($colorPrimary, $colorSecondary, $black);
